@@ -8,10 +8,10 @@ import { categories } from '../../data/dataArrays';
 
 
 const recipes =[
-{title: 'Static Menu', text: 'lorem ciao',photo_url:categories.pop().photo_url ,screenName:'LoginScreen'},
-{title: 'Discovery Menu', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'LoginScreen'},
-{title: 'Our Products', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'LoginScreen'},
-{title: 'Today Offers', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'LoginScreen'},
+{title: 'Static Menu', text: 'lorem ciao',photo_url:categories.pop().photo_url ,screenName:'Login'},
+{title: 'Discovery Menu', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'Login'},
+{title: 'Our Products', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'Login'},
+{title: 'Today Offers', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'Login'},
 ]
 
 

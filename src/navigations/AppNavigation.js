@@ -41,7 +41,7 @@ function MainNavigator() {
 } */
 
 const MainNavigator = createStackNavigator(
-  { Login: LoginScreen,
+  { Login: {screen :LoginScreen, navigationOptions:{header:null}},
     Home: HomeScreen,
     Categories: CategoriesScreen,
     Recipe: RecipeScreen,
@@ -59,7 +59,7 @@ const MainNavigator = createStackNavigator(
         textAlign: 'center',
         alignSelf: 'center',
         flex: 1,
-      }
+      },
     })
   }
 ); 

@@ -7,11 +7,11 @@ import { getCategoryName } from '../../data/MockDataAPI';
 import { categories } from '../../data/dataArrays';
 
 
-const recipes =[
-{title: 'Static Menu', text: 'lorem ciao',photo_url:categories.pop().photo_url ,screenName:'Login'},
-{title: 'Discovery Menu', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'Login'},
-{title: 'Our Products', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'Login'},
-{title: 'Today Offers', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'Login'},
+const recipes = [
+  { title: 'Static Menu', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'Login' },
+  { title: 'Discovery Menu', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'Login' },
+  { title: 'Our Products', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'Login' },
+  { title: 'Today Offers', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'Login' },
 ]
 
 
@@ -30,13 +30,13 @@ export default class HomeScreen extends React.Component {
   }
 
   onPressRecipe = name => {
-    global.lastScreen=global.currentScreen;
-    global.currentScreen=name;
+    global.lastScreen = global.currentScreen;
+    global.currentScreen = name;
     this.props.navigation?.navigate(name);
   };
 
   renderRecipes = ({ item }) => (
-    <TouchableHighlight underlayColor='rgba(73,182,77,0.9)' onPress={() => this.onPressRecipe(item.screenName)}>
+    <TouchableHighlight underlayColor='rgba(73,182,77,0.7)' onPress={() => this.onPressRecipe(item.screenName)}>
       <View style={styles.container}>
         <Image style={styles.photo} source={{ uri: item.photo_url }} />
         <Text style={styles.title}>{item.title}</Text>
@@ -47,16 +47,18 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <View>
-        <FlatList
-          vertical
-          showsVerticalScrollIndicator={false}
-          numColumns={2}
-          data={recipes}
-          renderItem={this.renderRecipes}
-          keyExtractor={item => `${item.recipeId}`}
-        />
-      </View>
+        <ScrollView>
+          <FlatList
+            vertical
+            showsVerticalScrollIndicator={false}
+            numColumns={1}
+            data={recipes}
+            renderItem={this.renderRecipes}
+            keyExtractor={item => `${item.recipeId}`}
+          />
+        </ScrollView>
+
+
     );
   }
 }

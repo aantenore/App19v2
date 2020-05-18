@@ -15,7 +15,7 @@ export default class LoginScreen extends React.Component {
                     <Image source={logo} style={styles.logo} />
                 </View>
                 <View style={styles.formcontainer}>
-                    <LoginForm />
+                    <LoginForm navigation={this.props.navigation}/>
                 </View>
 
             </KeyboardAvoidingView>

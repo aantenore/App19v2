@@ -5,5 +5,6 @@
   "packagerPid": 13620,
   "expoServerNgrokUrl": "https://wb-yde.aantenore.app19v2.exp.direct",
   "packagerNgrokUrl": "https://packager.wb-yde.aantenore.app19v2.exp.direct",
-  "ngrokPid": 6956
+  "ngrokPid": 6956,
+  "webpackServerPort": 19006
 }

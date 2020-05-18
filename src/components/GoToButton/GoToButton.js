@@ -21,6 +21,6 @@ export default class GoToButton extends React.Component {
         global.currentScreen=this.props?.screen;
         global.context=this.props?.params?.context!==undefined?this.props.params.context:global.context;;
         global.table=this.props?.params?.table!==undefined?this.props.params.table:global.table;
-        this.props.navigation.navigate(this.props?.screen);
+        this.props.navigation?.navigate(this.props?.screen);
       };
 }

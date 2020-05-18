@@ -1,10 +1,19 @@
 import React from 'react';
 import { FlatList, ScrollView, Text, View, TouchableHighlight, Image } from 'react-native';
 import styles from './styles';
-import { recipes } from '../../data/dataArrays';
 import MenuImage from '../../components/MenuImage/MenuImage';
 import DrawerActions from 'react-navigation';
 import { getCategoryName } from '../../data/MockDataAPI';
+import { categories } from '../../data/dataArrays';
+
+
+const recipes =[
+{title: 'Static Menu', text: 'lorem ciao',photo_url:categories.pop().photo_url ,screenName:'LoginScreen'},
+{title: 'Discovery Menu', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'LoginScreen'},
+{title: 'Our Products', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'LoginScreen'},
+{title: 'Today Offers', text: 'lorem ciao',photo_url:categories.pop().photo_url,screenName:'LoginScreen'},
+]
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -20,16 +29,18 @@ export default class HomeScreen extends React.Component {
     super(props);
   }
 
-  onPressRecipe = item => {
-    this.props.navigation.navigate('Recipe', { item });
+  onPressRecipe = name => {
+    global.lastScreen=global.currentScreen;
+    global.currentScreen=name;
+    this.props.navigation?.navigate(name);
   };
 
   renderRecipes = ({ item }) => (
-    <TouchableHighlight underlayColor='rgba(73,182,77,0.9)' onPress={() => this.onPressRecipe(item)}>
+    <TouchableHighlight underlayColor='rgba(73,182,77,0.9)' onPress={() => this.onPressRecipe(item.screenName)}>
       <View style={styles.container}>
         <Image style={styles.photo} source={{ uri: item.photo_url }} />
         <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.category}>{getCategoryName(item.categoryId)}</Text>
+        <Text style={styles.category}>{item.text}</Text>
       </View>
     </TouchableHighlight>
   );

@@ -13,6 +13,7 @@ import DrawerContainer from '../screens/DrawerContainer/DrawerContainer';
 import IngredientScreen from '../screens/Ingredient/IngredientScreen';
 import SearchScreen from '../screens/Search/SearchScreen';
 import IngredientsDetailsScreen from '../screens/IngredientsDetails/IngredientsDetailsScreen';
+import LoginScreen from '../screens/Login/Login';
 
 /* const Stack = createStackNavigator();
 
@@ -40,7 +41,7 @@ function MainNavigator() {
 } */
 
 const MainNavigator = createStackNavigator(
-  {
+  { Login: LoginScreen,
     Home: HomeScreen,
     Categories: CategoriesScreen,
     Recipe: RecipeScreen,
@@ -50,7 +51,7 @@ const MainNavigator = createStackNavigator(
     IngredientsDetails: IngredientsDetailsScreen
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Login',
     // headerMode: 'float',
     defaulfNavigationOptions: ({ navigation }) => ({
       headerTitleStyle: {
@@ -99,7 +100,7 @@ const DrawerStack = createDrawerNavigator(
     </NavigationContainer>
   )
 } */
- 
+ var AppContainer;
 export default AppContainer = createAppContainer(DrawerStack);
 
 console.disableYellowBox = true;

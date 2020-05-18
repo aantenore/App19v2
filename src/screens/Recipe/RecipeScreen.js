@@ -84,7 +84,7 @@ export default class RecipeScreen extends React.Component {
               containerStyle={styles.paginationContainer}
               dotColor="rgba(255, 255, 255, 0.92)"
               dotStyle={styles.paginationDot}
-              inactiveDotColor="white"
+              inactiveDotColor="black"
               inactiveDotOpacity={0.4}
               inactiveDotScale={0.6}
               carouselRef={this.slider1Ref}

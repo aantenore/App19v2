@@ -51,9 +51,10 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView style = {{flex:1}}>
       <HorizontalFlatList style = {{flex:1}}data={this.state.categories}></HorizontalFlatList>
       <FlatList
+      style = {{flex:1}}
         vertical
         showsVerticalScrollIndicator={false}
         numColumns={1}

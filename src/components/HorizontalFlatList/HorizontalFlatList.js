@@ -2,12 +2,24 @@ import React from 'react';
 //import  {HorizontalFlatlistItem}  from './HorizontalFlatlistItem';
 import { AppRegistry, FlatList, StyleSheet, Text, View, Image, ImageBackground, TouchableHighlight, Platform } from 'react-native';
 import HorizontalFlatlistItem from './HorizontalFlatlistItem';
+import styles from '../styles';
+import {categories} from '../../data/dataArrays'
+
+var temp = categories.pop().photo_url;
 
 export default class HorizontalFlatList extends React.Component {
     constructor(props) {
         super(props);
     }
-    renderCategory = ({ item }) => (
+    renderRecipes = ({ item }) => (
+        <TouchableHighlight underlayColor='rgba(73,182,77,0.7)' onPress={() => {}}>
+          <View style={styles.container}>
+            <Image style={styles.photo} source={{ uri: temp }} />
+            <Text style={styles.title}>{item}</Text>
+          </View>
+        </TouchableHighlight>
+      );
+    /*renderCategory = ({ item }) => (
         <TouchableHighlight  underlayColor='rgba(73,182,77,0.7)' >
             <View style={{
                 flex: 1,
@@ -22,10 +34,10 @@ export default class HorizontalFlatList extends React.Component {
                 <Text>{item.id}</Text>
             </View>
         </TouchableHighlight>
-    );
+    );*/
 
     render() {
-        return (
+        return (/*
             <View style={{
                 flex: 1,
                 flexDirection: 'column',
@@ -47,23 +59,15 @@ export default class HorizontalFlatList extends React.Component {
 
             </View>
         );
+    }*/
+
+    <FlatList
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        numColumns={1}
+        data={this.props.data}
+        renderItem={this.renderRecipes}
+        keyExtractor={item => `${item.recipeId}`}
+      />);
     }
 }
-
-var data = {
-    cibo: {
-        id: 'cibo'
-    },
-    drink: {
-        id: 'drink'
-    },
-    sigarette: {
-        id: 'sigarette'
-    },
-    droga: {
-        id: 'droga'
-    },
-    fede: {
-        id: 'fede'
-    },
-};

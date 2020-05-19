@@ -5,10 +5,12 @@ import { View, Image, KeyboardAvoidingView } from 'react-native';
 import styles from './styles';
 import logo from './../../../assets/icon.png'
 import LoginForm from './LoginForm';
-
+import Getter from '../../service/Getter'
+import constants from '../../constants/constants'
 
 export default class LoginScreen extends React.Component {
     render() {
+        global.user=constants.defaultUser;
         return (
             <KeyboardAvoidingView behavior="position" style={styles.container}>
                 <View style={styles.logocontainer}>

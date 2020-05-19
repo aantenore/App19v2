@@ -6,6 +6,8 @@ import DrawerActions from 'react-navigation';
 import { getCategoryName } from '../../data/MockDataAPI';
 import { categories } from '../../data/dataArrays';
 import HorizontalFlatList from './../../components/HorizontalFlatList/HorizontalFlatList'
+import Getter from '../../service/Getter'
+import constants from '../../constants/constants'
 
 
 const recipes = [
@@ -28,6 +30,7 @@ export default class HomeScreen extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state={};
   }
 
   onPressRecipe = name => {
@@ -48,7 +51,28 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-        <ScrollView>
+      <ScrollView>
+      <HorizontalFlatList style = {{flex:1}}data={this.state.categories}></HorizontalFlatList>
+      <FlatList
+        vertical
+        showsVerticalScrollIndicator={false}
+        numColumns={1}
+        data={recipes}
+        renderItem={this.renderRecipes}
+        keyExtractor={item => `${item.recipeId}`}
+      />
+    </ScrollView>
+
+    );
+  }
+
+  componentDidMount(){
+    this.setState({categories:Getter.getChildren(constants.fixedDrinksPath()+'/birra')});
+  }
+}
+
+/*
+ <ScrollView>
           <ScrollView horizontal={true} style={{ flex:1,backgroundColor: '#0ad4bb'}}>
             <HorizontalFlatList></HorizontalFlatList>
           </ScrollView>
@@ -61,8 +85,4 @@ export default class HomeScreen extends React.Component {
             keyExtractor={item => `${item.recipeId}`}
           />
         </ScrollView>
-
-
-    );
-  }
-}
+*/

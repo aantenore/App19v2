@@ -14,7 +14,6 @@ import IngredientScreen from '../screens/Ingredient/IngredientScreen';
 import SearchScreen from '../screens/Search/SearchScreen';
 import IngredientsDetailsScreen from '../screens/IngredientsDetails/IngredientsDetailsScreen';
 import LoginScreen from '../screens/Login/Login';
-
 /* const Stack = createStackNavigator();
 
 function MainNavigator() {
@@ -48,7 +47,7 @@ const MainNavigator = createStackNavigator(
     RecipesList: RecipesListScreen,
     Ingredient: IngredientScreen,
     Search: SearchScreen,
-    IngredientsDetails: IngredientsDetailsScreen
+    IngredientsDetails: IngredientsDetailsScreen,
   },
   {
     initialRouteName: 'Login',

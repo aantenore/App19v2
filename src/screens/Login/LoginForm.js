@@ -12,7 +12,7 @@ export default function LoginForm({ navigation }) {
             <TextInput style={styles.input}
                 placeholder={insertcode}
                 placeholderTextColor='rgba(255,255,255,0.6)'
-                returnKeyType="Entra" />
+                returnKeyType="done" />
             <GoToButton screen='Home' navigation={navigation} params={{ context: 'customer'}} />
         </View>
     );

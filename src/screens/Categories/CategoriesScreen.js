@@ -4,11 +4,13 @@ import {
   Text,
   View,
   Image,
-  TouchableHighlight
+  TouchableHighlight,
+  ScrollView
 } from 'react-native';
 import styles from './styles';
 import { categories } from '../../data/dataArrays';
 import { getNumberOfRecipes } from '../../data/MockDataAPI';
+
 
 export default class CategoriesScreen extends React.Component {
   static navigationOptions = {
@@ -37,13 +39,13 @@ export default class CategoriesScreen extends React.Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <FlatList
           data={categories}
           renderItem={this.renderCategory}
           keyExtractor={item => `${item.id}`}
         />
-      </View>
+      </ScrollView>
     );
   }
 }

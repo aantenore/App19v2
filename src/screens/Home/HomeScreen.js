@@ -5,6 +5,7 @@ import MenuImage from '../../components/MenuImage/MenuImage';
 import DrawerActions from 'react-navigation';
 import { getCategoryName } from '../../data/MockDataAPI';
 import { categories } from '../../data/dataArrays';
+import HorizontalFlatList from './../../components/HorizontalFlatList/HorizontalFlatList'
 
 
 const recipes = [
@@ -48,6 +49,9 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
         <ScrollView>
+          <ScrollView horizontal={true} style={{ flex:1,backgroundColor: '#0ad4bb'}}>
+            <HorizontalFlatList></HorizontalFlatList>
+          </ScrollView>
           <FlatList
             vertical
             showsVerticalScrollIndicator={false}

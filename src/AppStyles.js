@@ -66,3 +66,11 @@ export const RecipeCard = StyleSheet.create({
     marginBottom: 5
   }
 });
+
+export const ScreenLayout = StyleSheet.create({
+  container:{
+    flex: 1,
+    width: width,
+    height: height,
+  }
+})

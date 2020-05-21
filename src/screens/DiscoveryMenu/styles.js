@@ -46,18 +46,12 @@ const styles = StyleSheet.create({
     marginTop: 0,
     marginBottom: 5
   },
-  flatlistcontainer: {
-    margin: 5,
-    padding: 3,
-    justifyContent: 'center',
+  horizontalFlatList:{
     flex: 1,
-    // borderWidth: 0.5,
-    // borderColor: '#cccccc',
-    // borderRadius: 16,
-    // backgroundColor: "whitesmoke",
+    justifyContent: 'center',
     alignItems: 'center'
 
-}
+  }
 
 });
 

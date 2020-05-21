@@ -69,8 +69,9 @@ export const RecipeCard = StyleSheet.create({
 
 export const ScreenLayout = StyleSheet.create({
   container:{
-    flex: 1,
     width: width,
     height: height,
+    backgroundColor: 'white',
+   
   }
 })

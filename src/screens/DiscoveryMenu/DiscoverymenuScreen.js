@@ -1,40 +1,40 @@
-import { View, FlatList, TouchableOpacity, Image, Text } from 'react-native';
+import { View, FlatList, TouchableOpacity, Image, ScrollView } from 'react-native';
 import * as React from 'react';
-import firebaseClass from '../constants/database';
-import InputOrSlider from './InputOrSlider'
-import ProductListItem from './ProductListItem'
-import { styles } from '../assets/style';
-import img from './../assets/img/cibo.jpg';
+import firebaseClass from '../../constants/database';
+import styles from './styles';
+import Getter from '../../service/Getter'
+import constants from '../../constants/constants'
+import { ScreenLayout } from '../../AppStyles';
+import HorizontalFlatList from '../../components/HorizontalFlatList/HorizontalFlatList';
 
 
-
-
-export default class DiscoveryList extends React.Component {
-
+export default class DiscoveryMenuScreen extends React.Component {
+    static navigationOptions = ({ navigation }) => ({
+        title: 'DiscoveryMenu'
+    });
     render() {
         console.log(this.state.categoriesArray);
         return (
+            <ScrollView style={ScreenLayout.container}>
+                <HorizontalFlatList data={this.state.categories}>
+                </HorizontalFlatList>
+                {/*<HorizontalFlatList style={{ flex: 1 }}
+                    data={this.state.categories}>
+                </HorizontalFlatList>
                 <FlatList
-                    data={this.state.categoriesArray}
+                    data={this.categoriesArray}
                     keyExtractor={(item, index) => index}
                     renderItem={({ item, index }) => {
                         return (
-                            <TouchableOpacity style={styles.flatlistbutton} >
-                                <Image style={styles.flatlistimg} source={img} />
-                                {/* <InputOrSlider item={item} index={index} navigation={this.props.navigation}></InputOrSlider> */}
-
+                            <TouchableOpacity >
+                                <Image />
+                                 <InputOrSlider item={item} index={index} navigation={this.props.navigation}></InputOrSlider>
                             </TouchableOpacity>
                         );
                     }}>
-                </FlatList>
-   );
-                { /*<FlatList data={this.state.categoriesArray}
-                renderItem={({item,index})=>{
-                    return(
-                            <InputOrSlider item={item} index={index} navigation={this.props.navigation}></InputOrSlider>
-                    )
-                }}></FlatList>*/}
-     
+                </FlatList> */}
+            </ScrollView>
+        );
     };
 
     constructor(props) {
@@ -43,6 +43,7 @@ export default class DiscoveryList extends React.Component {
     }
 
     componentDidMount() {
+        this.setState({ categories: Getter.getChildren(constants.fixedDrinksPath() + '/birra') });
         this.findProducts();
     }
 
@@ -62,7 +63,7 @@ export default class DiscoveryList extends React.Component {
             this.setState({ categoriesArray });
         });
     }
-    
+
 }
 
 

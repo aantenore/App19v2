@@ -12,13 +12,13 @@ import { ScreenLayout } from '../../AppStyles';
 
 
 const recipes = [
-  { title: 'Static Menu', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'Login' },
-  { title: 'Discovery Menu', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'Login' },
-  { title: 'Our Products', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'Login' },
-  { title: 'Today Offers', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'Login' },
+  { title: 'Static Menu', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'StaticMenu' },
+  { title: 'Discovery Menu', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'DiscoveryMenu' },
+  { title: 'Our Products', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'OurProducts' },
+  { title: 'Today Offers', text: 'lorem ciao', photo_url: categories.pop().photo_url, screenName: 'TodayOffers' },
 ]
 
-
+var subtitle = 'Scegli e visita uno dei menù';
 export default class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'Home',
@@ -41,7 +41,8 @@ export default class HomeScreen extends React.Component {
   };
 
   renderRecipes = ({ item }) => (
-    <TouchableHighlight underlayColor='transparent' onPress={() => this.onPressRecipe(item.screenName)}>
+    <TouchableHighlight underlayColor='transparent' onPress={
+      () => this.onPressRecipe(item.screenName)}>
       <View style={styles.container}>
         <Image style={styles.photo} source={{ uri: item.photo_url }} />
         <Text style={styles.title}>{item.title}</Text>
@@ -50,23 +51,34 @@ export default class HomeScreen extends React.Component {
     </TouchableHighlight>
   );
 
+  header = () => {
+    return (
+    <View style={{
+      flex: 1,
+      height: 40,
+      width: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding:3,
+      marginTop: 3
+    }}>
+      <Text style={styles.title}>{subtitle}</Text>
+    </View>);
+  }
+
   render() {
     return (
-      <ScrollView style={ScreenLayout.container}>
-        <HorizontalFlatList style={{ flex: 1 }}
-         data={this.state.categories}>
-         </HorizontalFlatList>
-        <FlatList
-          style={{ flex: 1 }}
+       <FlatList
+          style={{ flex: 1, backgroundColor: 'white' }}
           vertical
           showsVerticalScrollIndicator={false}
           numColumns={1}
           data={recipes}
+          ListHeaderComponent={this.header}
+          stickyHeaderIndices={[0]}
           renderItem={this.renderRecipes}
           keyExtractor={item => `${item.recipeId}`}
         />
-      </ScrollView>
-
     );
   }
 

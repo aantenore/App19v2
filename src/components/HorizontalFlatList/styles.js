@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import styles from '../styles';
 
 const internalstyle = StyleSheet.create({
     title: {
@@ -8,7 +7,7 @@ const internalstyle = StyleSheet.create({
         flex: 1,
         fontSize: 15,
         textAlign: 'center',
-        color: '#444444', //'#0ad4bb',
+        color: '#0ad4bb', //'#444444', //
         marginHorizontal: 2,
         marginVertical: 15
     },
@@ -19,26 +18,26 @@ const internalstyle = StyleSheet.create({
     },
     container: {
         width: 80,
-        height: styles.container.height,
+        height: 70,
         flex: 1,
         borderColor: '#cccccc',
         borderWidth: 0.5,
         borderRadius: 20,
-        backgroundColor: 'whitesmoke',
+        backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         marginLeft: 3,
     },
     flatlistcontainer: {
-        margin: 8,
+        margin: 5,
         padding: 3,
         justifyContent: 'center',
         flex: 1,
-        height: 60,
-        borderWidth: 1,
-        borderColor: '#cccccc',
-        borderRadius: 20,
-        backgroundColor: "#fff"
+        // borderWidth: 0.5,
+        // borderColor: '#cccccc',
+        // borderRadius: 16,
+        // backgroundColor: "whitesmoke",
+        alignItems: 'center'
 
     }
 });

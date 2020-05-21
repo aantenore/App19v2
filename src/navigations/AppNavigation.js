@@ -14,6 +14,10 @@ import IngredientScreen from '../screens/Ingredient/IngredientScreen';
 import SearchScreen from '../screens/Search/SearchScreen';
 import IngredientsDetailsScreen from '../screens/IngredientsDetails/IngredientsDetailsScreen';
 import LoginScreen from '../screens/Login/Login';
+import DiscoveryMenuScreen from '../screens/DiscoveryMenu/DiscoverymenuScreen';
+import StaticMenuScreen from '../screens/StaticMenu/StaticMenuScreen';
+import TodayoffersScreen from '../screens/TodayOffers/TodayOffersScreen';
+import OurProductsScreen from '../screens/OurProducts/OurProductsScreen';
 /* const Stack = createStackNavigator();
 
 function MainNavigator() {
@@ -42,6 +46,10 @@ function MainNavigator() {
 const MainNavigator = createStackNavigator(
   { Login: {screen :LoginScreen, navigationOptions:{headerShown: false}} ,
     Home: HomeScreen,
+    DiscoveryMenu: DiscoveryMenuScreen,
+    StaticMenu: StaticMenuScreen, 
+    TodayOffers: TodayoffersScreen,
+    OurProducts: OurProductsScreen, 
     Categories: CategoriesScreen,
     Recipe: RecipeScreen,
     RecipesList: RecipesListScreen,

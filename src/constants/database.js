@@ -4,7 +4,7 @@ export default class firebaseClass{
 //this is a singleton which works as api for firebase
     static appinit=undefined;
     static db=undefined;
-    static db = () => {return(this.appinit?this.database?this.db:this.appinit.database():app().database())}
+    static db = () => {return this.appinit?this.database?this.db:this.appinit.database():app().database()}
 
 }
 

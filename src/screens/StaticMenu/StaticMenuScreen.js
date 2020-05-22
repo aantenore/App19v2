@@ -18,7 +18,7 @@ export default class StaticMenuScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {categories:[]};
   }
 
   onPressRecipe = name => {
@@ -39,15 +39,23 @@ export default class StaticMenuScreen extends React.Component {
   );
 
   render() {
-    return (
-      <View style={ScreenLayout.container}>
-        
-      </View>
+  console.log(this.state.categories.length);
+  var elements = [];
+	for(let i = 0; i < this.state.categories.length; i++){
+		elements.push(
+    <Text>elemento: {i}, {this.state.categories[i]}</Text>
+		)
+	}
+	return (
+		<View>
+			<Text>Funziona?</Text>
+			{ elements }
+		</View>
 
     );
   }
 
   componentDidMount() {
-   // this.setState({ categories: Getter.getChildren(constants.fixedDrinksPath() + '/birra') });
+  Getter.getChildren(constants.fixedDrinksPath() + '/birra').then(el=>this.setState({ categories:el}));
   }
 }

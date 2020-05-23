@@ -31,25 +31,24 @@ export default class StaticMenuScreen extends React.Component {
     <TouchableHighlight underlayColor='transparent' onPress={
       () => this.onPressRecipe(item.screenName)}>
       <View style={styles.container}>
-        <Image style={styles.photo} source={{ uri: item.photo_url }} />
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.category}>{item.text}</Text>
+        <Text style={styles.title}>{item.name}</Text>
       </View>
     </TouchableHighlight>
   );
 
   render() {
-  var elements = [];
-	for(let i = 0; i < this.state.categories.length; i++){
-		elements.push(
-    <Text>elemento: {i}, {this.state.categories[i].name}</Text>
-		)
-	}
 	return (
-		<View>
-			<Text>Funziona?</Text>
-			{ elements }
-		</View>
+		<FlatList
+    style={{backgroundColor: 'white' }}
+          vertical
+          showsVerticalScrollIndicator={true}
+          numColumns={1}
+          data={this.state.categories}
+          ListHeaderComponent={this.header}
+          stickyHeaderIndices={[0]}
+          renderItem={this.renderRecipes}
+          keyExtractor={item => `${item.recipeId}`}
+    />
     );
   }
 

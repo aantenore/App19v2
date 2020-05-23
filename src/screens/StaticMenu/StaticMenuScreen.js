@@ -39,11 +39,11 @@ export default class StaticMenuScreen extends React.Component {
   );
 
   render() {
-  console.log(this.state.categories.length);
+  console.log(Getter.getDrinks());
   var elements = [];
 	for(let i = 0; i < this.state.categories.length; i++){
 		elements.push(
-    <Text>elemento: {i}, {this.state.categories[i]}</Text>
+    <Text>elemento: {i}, {this.state.categories[i].name}</Text>
 		)
 	}
 	return (
@@ -51,11 +51,9 @@ export default class StaticMenuScreen extends React.Component {
 			<Text>Funziona?</Text>
 			{ elements }
 		</View>
-
     );
   }
 
   componentDidMount() {
-  Getter.getChildren(constants.fixedDrinksPath() + '/birra').then(el=>this.setState({ categories:el}));
   }
 }

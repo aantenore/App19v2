@@ -39,7 +39,7 @@ export default class StaticMenuScreen extends React.Component {
   render() {
 	return (
 		<FlatList
-    style={{backgroundColor: 'white' }}
+    style={{ flex: 1, backgroundColor: 'white' }}
           vertical
           showsVerticalScrollIndicator={true}
           numColumns={1}

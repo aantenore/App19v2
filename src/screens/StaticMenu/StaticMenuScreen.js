@@ -44,10 +44,7 @@ export default class StaticMenuScreen extends React.Component {
           showsVerticalScrollIndicator={true}
           numColumns={1}
           data={this.state.categories}
-          ListHeaderComponent={this.header}
-          stickyHeaderIndices={[0]}
           renderItem={this.renderRecipes}
-          keyExtractor={item => `${item.recipeId}`}
     />
     );
   }

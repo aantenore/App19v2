@@ -39,7 +39,6 @@ export default class StaticMenuScreen extends React.Component {
   );
 
   render() {
-  console.log(Getter.getDrinks());
   var elements = [];
 	for(let i = 0; i < this.state.categories.length; i++){
 		elements.push(
@@ -55,5 +54,6 @@ export default class StaticMenuScreen extends React.Component {
   }
 
   componentDidMount() {
+    Getter.getFoods(constants.fixedSalty).then(result=>this.setState({categories:result}))
   }
 }

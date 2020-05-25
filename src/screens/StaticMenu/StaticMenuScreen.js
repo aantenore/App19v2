@@ -65,7 +65,7 @@ export default class StaticMenuScreen extends React.Component {
 
   render() {
     return (
-      <View>
+    
       <FlatList
         style={styles.flatlist}
         vertical
@@ -73,7 +73,8 @@ export default class StaticMenuScreen extends React.Component {
         numColumns={1}
         data={this.state.categories}
         renderItem={this.renderRecipes}
-      />
+      /> 
+      );
       {/* <Modal
        animationType={'slide'}
        transparent={true}
@@ -94,7 +95,6 @@ export default class StaticMenuScreen extends React.Component {
             </View>
           </View>
        </Modal> */}
-      </View>
-    );
+   
   }
 }

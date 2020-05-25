@@ -53,16 +53,8 @@ export default class HomeScreen extends React.Component {
 
   header = () => {
     return (
-    <View style={{
-      flex: 1,
-      height: 40,
-      width: '100%',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding:3,
-      marginTop: 3
-    }}>
-      <Text style={styles.title}>{subtitle}</Text>
+    <View style={styles.header}>
+      <Text style={styles.headertext}>{subtitle}</Text>
     </View>);
   }
 

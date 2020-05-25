@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 1,
-    marginVertical:10,
+    marginVertical: 10,
     width: SCREEN_WIDTH,
     height: RECIPE_ITEM_HEIGHT,
     borderColor: '#cccccc',
@@ -26,13 +26,13 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: 'white'
   },
-  flatlist:{
+  flatlist: {
     flex: 1,
     backgroundColor: '#0ad4bb',
   },
   photo: {
-    width: SCREEN_WIDTH, 
-    height: RECIPE_ITEM_HEIGHT/3 *2 ,
+    width: SCREEN_WIDTH,
+    height: RECIPE_ITEM_HEIGHT / 3 * 2,
     borderRadius: 15,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0
@@ -51,18 +51,22 @@ const styles = StyleSheet.create({
     marginTop: 0,
     marginBottom: 5
   },
-  flatlistcontainer: {
-    margin: 5,
-    padding: 3,
-    justifyContent: 'center',
+  header: {
     flex: 1,
-    // borderWidth: 0.5,
-    // borderColor: '#cccccc',
-    // borderRadius: 16,
-    // backgroundColor: "whitesmoke",
-    alignItems: 'center'
-
-}
+    height: 40,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 3,
+    marginTop: 5
+  },
+  headertext:{
+    flex: 1,
+    fontSize: 20,
+    fontWeight: '500',
+    textAlign: 'center',
+    color: 'white'
+  }
 
 });
 

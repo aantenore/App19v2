@@ -23,7 +23,13 @@ const styles = StyleSheet.create({
     height: RECIPE_ITEM_HEIGHT,
     borderColor: '#cccccc',
     borderWidth: 0.5,
-    borderRadius: 15
+    borderRadius: 15,
+    backgroundColor: 'white'
+  },
+  flatlist:{
+    flex: 1,
+    backgroundColor: '#0ad4bb',
+    
   },
   photo: {
     width: SCREEN_WIDTH, 

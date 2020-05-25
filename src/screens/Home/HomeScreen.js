@@ -69,7 +69,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
        <FlatList
-          style={{ flex: 1, backgroundColor: 'white' }}
+          style={styles.flatlist}
           vertical
           showsVerticalScrollIndicator={false}
           numColumns={1}

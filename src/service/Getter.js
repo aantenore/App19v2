@@ -205,7 +205,7 @@ class Getter{
     return features;
 }
 
-  async function _getDepthSubCategories(ref){
+  export async function _getDepthSubCategories(ref){
     var depth = 0;
     var categories = await Getter.getChildren(ref);
     for(let i=0;i<categories.length;i++){
